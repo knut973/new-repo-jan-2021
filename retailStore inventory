@@ -1,0 +1,24 @@
+package no.dnb.classesRetailer;
+
+import java.util.ArrayList;
+
+public class inventory {
+
+    private ArrayList<game> games = new ArrayList<game>();
+
+    public void addGame(game aGame)
+    {
+        games.add(aGame);
+
+    }
+    public int invSize(){
+        return games.size();
+
+    }
+
+    public void buyGame(){
+        games.remove(0);
+    }
+
+
+}
