@@ -1,0 +1,23 @@
+package no.dnb.classesRetailer;
+
+public class game {
+
+        //constructor
+
+
+    public game(String name, int price) {
+
+        System.out.printf("One copy of the game %s has been added with a price of %d NOK per unit. \n", name, price);
+
+    }
+
+
+    public static double getPrice(int prodPrice){
+
+        int price = prodPrice;
+        return (price/1.25);
+    }
+
+
+
+}
