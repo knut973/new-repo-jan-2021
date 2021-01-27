@@ -1,0 +1,112 @@
+package student.opflow;
+
+
+import java.util.Scanner;
+
+public class test2 {
+
+    public static void main(String[] args) {
+
+        Scanner input = new Scanner(System.in);
+
+        String secretPassword = "Swordfish";
+
+        int i = 0;
+
+
+        System.out.print("Please enter your name: ");
+        String name = input.next();
+
+        while (i <= 3) {
+
+            System.out.print("Please enter password: ");
+            String password = input.next();
+
+            if (!password.equalsIgnoreCase(secretPassword))
+                System.out.println("Incorrect, you have " + (3 - i) + " attempts left");
+            else
+                program(name);
+
+            i++;
+        }
+        System.out.println("Too many incorrect answers.");
+
+
+    }
+
+
+    public static void program(String name) {
+        Scanner input = new Scanner(System.in);
+        boolean menu = true;
+        boolean calcMenu = true;
+
+
+        System.out.printf("Access granted %s.\n", name);
+
+        while (menu) {
+
+
+            System.out.print("\n Press \"1\" to open calculator. \n Press \"2\" to exit.\n");
+            int selection = input.nextInt();
+
+            if (selection == 1) {
+
+                while (calcMenu){
+
+                    System.out.println("This is the calculator\n");
+
+                    System.out.print("Enter the first number: ");
+                    int num1 = input.nextInt();
+
+                    System.out.print("Enter the second number: ");
+                    int num2 = input.nextInt();
+
+                    System.out.println("What do you want to do? \nPress \"1\" to add the numbers\nPress \"2\" to subtract\nPress \"3\" to multiply\nPress \"4\" to divide");
+                    int option = input.nextInt();
+
+                    int result = calculator(num1, num2, option);
+
+                    System.out.println("Answer: " + result);
+                    System.out.print("Type \"1\" to go again, or \"2\" to exit to main menu: ");
+                    int repeat = input.nextInt();
+
+                    if (repeat != 1)
+                        calcMenu = false;
+
+
+                }
+
+
+            }
+
+
+            if (selection == 2) {
+                menu = false;
+                System.out.println("Exiting program");
+                System.exit(0);
+
+
+            }
+        }
+    }
+
+    public static int calculator(int num1, int num2, int option) {
+
+        if (option == 1){
+            return (num1 + num2);
+        }
+        if (option == 2){
+            return(num1 - num2);
+        }
+        if (option == 3){
+            return (num1 * num2);
+        }
+        if (option == 4){
+            return (num1 / num2);
+        }
+
+
+        return 0;
+    }
+
+}
