@@ -1,0 +1,56 @@
+package no.dnb.classesRetailer;
+
+public class main {
+
+    public static void main(String[] args) {
+
+        inventory theInv = new inventory();
+       // game theGame = new game();
+
+        int gamePrice = 10;
+
+
+
+        game addGame1 = new game("Fantasy", 10);
+        theInv.addGame(addGame1);
+
+        game addGame2 = new game("Pirates", 10);
+        theInv.addGame(addGame2);
+
+        game addGame3 = new game("Skyscraper 2", 10);
+        theInv.addGame(addGame3);
+
+                //get inventory size
+        int n = theInv.invSize();
+        System.out.println("\nThe inventory now holds "+n+" games.");
+        if (n<=2) {
+            System.out.println("Inventory is low, and should be restocked.");
+        }
+
+
+            //get net price
+        double m = game.getPrice(10);
+        System.out.println("The net price of one game is " +m + "NOK. (" + gamePrice + " NOK gross.)");
+
+
+            //VAT, gross price and expected result
+        double result = n * m;
+        System.out.println("This means an expected result of " + result + " NOK (VAT not included.)");
+
+            //somebody buys one game
+
+        theInv.buyGame();
+        System.out.println("\nOne game just got sold\n");
+
+                //new inventory
+        int y = theInv.invSize();
+        System.out.println("The inventory now holds "+y+" games.");
+            if (y<=2) {
+            System.out.println("Inventory is low, and should be restocked.");
+            }
+
+
+
+
+    }
+}
