@@ -13,7 +13,8 @@ public class Game {
         this.amountInStock = amountInStock;
 
     }
-
+    
+    // ANDY: Can simplify: return amountInStock > 0;
     public boolean isInStock(){
         if (amountInStock > 0)
             return true;
